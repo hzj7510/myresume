@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>my cv</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fullPage.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/resume.css'%}" />
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="{% static 'vendors/scrolloverflow.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'js/jquery.fullPage.js' %}"></script>
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['personalIntroduce', 'projectExperience1', 'projectExperience2', 'projectExperience3'],
+				scrollBar: true,
+
+                scrollingSpeed: 500,
+                navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+
+                onLeave: function(index, nextIndex, direction){
+				    var $personal = $('#personal_introduce, #personal_skill');
+				    var $one_duty = $('#work_one_introduce, #work_one_duty');
+				    var $one_struct = $('#work_one_struct');
+				    var $two_view = $('#work_two_introduce, #work_two_struct, #work_two_duty');
+				    var $three_view = $('#work_three_introduce, #work_three_struct, #work_three_duty');
+				    var element = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+
+                    if (nextIndex == 1){
+                        $personal.addClass('animated zoomIn').one(element, function () {
+                            $personal.removeClass('animated zoomIn');
+                        });
+                    }else if(nextIndex == 2){
+                        $one_duty.addClass('animated slideInLeft').one(element, function () {
+                            $one_duty.removeClass('animated slideInLeft');
+                        });
+                        $one_struct.addClass('animated slideInRight').one(element, function () {
+                            $one_struct.removeClass('animated slideInRight');
+                        });
+                    }else if(nextIndex == 3){
+                        $two_view.addClass('animated pulse').one(element, function () {
+                            $two_view.removeClass('animated pulse');
+                        });
+                    }else if(nextIndex == 4){
+                        $three_view.addClass('animated lightSpeedIn').one(element, function () {
+                            $three_view.removeClass('animated lightSpeedIn');
+                        });
+                    }
+                },
+                afterLoad: function(anchorLink, index){
+                    var element = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+                    var $personal = $('#personal_introduce, #personal_skill');
+                    if (index == 1){
+                        $personal.addClass('animated zoomIn').one(element, function () {
+                            $personal.removeClass('animated zoomIn');
+                        });
+                    }
+                }
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section " id="section0">
+        <div class="center">
+            <div id="personal_introduce">
+                <h3>个人简介</h3>
+                <div><strong>姓名:</strong>xxx | <strong>性别:</strong>男</div>
+                <div><strong>手机号:</strong>xxxx | <strong>邮箱:</strong>hzj7510@163.com</div>
+                <div><strong>工作经验:</strong>xx | <strong>学历:</strong>本科 | <strong>学校:</strong>滨州学院</div>
+            </div>
+        </div>
+        <div class="center">
+            <div id="personal_skill">
+                    <h3>个人技能</h3>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>xxxx；</div>
+                    <div>&nbsp;</div>
+                    <div>blog:http://hezhengjian.com；</div>
+                    <div>GitHub:https://github.com/hzj7510/；</div>
+                </div>
+            </div>
+	</div>
+
+	<div class="section" id="section1">
+        <div class="center">
+            <div id="work_one_introduce">
+                <h3>项目经历</h3>
+                <p>2016.10 - 至今   <strong>项目名称  iOS开发工程师</strong></p>
+                <p><strong>项目描述:</strong>你想要描述成的样子</p>
+            </div>
+            <div id="work_one_struct">
+                <h4>项目架构:</h4>
+                <div>1.xxxx。</div>
+                <div>2.xxxx。</div>
+                <div>3.xxxx。</div>
+                <div>4.xxxx。</div>
+            </div>
+            <div id="work_one_duty">
+                <h4>项目负责:</h4>
+                <div>1、xxxx。</div>
+                <div>2、xxxx。</div>
+                <div>3、xxxx。</div>
+                <div>4、xxxx。</div>
+                <div>5、xxxx。</div>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section2">
+		<div class="center">
+            <div id="work_two_introduce">
+                <h3>项目经历</h3>
+                <p>2016.05 - 2016.10   <strong>项目名称  iOS开发工程师</strong></p>
+                <p><strong>项目描述:</strong>你要描述成的样子</p>
+            </div>
+            <div id="work_two_struct">
+                <h4>项目架构:</h4>
+                <div>1.xxxx。</div>
+                <div>2.xxxx。</div>
+                <div>3.xxxx。</div>
+                <div>4.xxxx。</div>
+            </div>
+            <div id="work_two_duty">
+                <h4>项目负责:</h4>
+                <div>1、xxxx。</div>
+                <div>2、xxxx。</div>
+                <div>3、xxxx。</div>
+                <div>4、xxxx。</div>
+                <div>5、xxxx。</div>
+                <div>6、xxxx。</div>
+                <div>7、xxxx。</div>
+                <div>8、xxxx。</div>
+            </div>
+        </div>
+        <div class="div_session">
+            <img id="work_two_img_one"/>
+            <img id="work_two_img_two"/>
+        </div>
+	</div>
+
+    <div class="section" id="section3">
+		<div class="center">
+            <div id="work_three_introduce">
+                <h3>项目经历</h3>
+                <p>2015.11 - 2016.06   <strong>项目名称  iOS开发工程师</strong></p>
+                <p><strong>项目描述:</strong>你要描述的样子。</p>
+            </div>
+            <div id="work_three_struct">
+                <h4>项目架构:</h4>
+                <div>1.xxxx。</div>
+                <div>2.xxxx。</div>
+                <div>3.xxxx。</div>
+                <div>4.xxxx。</div>
+                <div>5.xxxx。</div>
+            </div>
+            <div id="work_three_duty">
+                <h4>项目负责:</h4>
+                <div>1、xxxx。</div>
+                <div>2、xxxx。</div>
+                <div>3、xxxx。</div>
+                <div>4、xxxx。</div>
+                <div>5、xxxx。</div>
+            </div>
+        </div>
+
+	</div>
+</div>
+
+</body>
+</html>

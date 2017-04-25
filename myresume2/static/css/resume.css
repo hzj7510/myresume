@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+.div_session{
+    width: 50%;
+    float: left;
+}
+.section{
+
+}
+
+.center {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#personal_introduce{
+}
+#personal_skill{
+}
+#work_one_introduce{
+
+
+}
+#work_one_struct{
+
+
+}
+#work_one_duty{
+
+
+}
+#work_two_introduce{
+
+
+}
+#work_two_struct{
+
+
+}
+#work_two_duty{
+
+
+}
+#work_two_img_one{
+
+
+}
+#work_two_img_two{
+
+
+}
+
+#work_three_introduce{
+
+
+}
+#work_three_struct{
+
+
+}
+#work_three_duty{
+
+}
+#work_three_img_one{
+
+
+}
+#work_three_img_two{
+
+
+}
